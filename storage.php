@@ -26,7 +26,7 @@ if (isset($_GET['delete'])) {
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["zipfile"])) {
     $uploadedFile = $_FILES["zipfile"];
     if ($uploadedFile["type"] !== "application/zip") {
-        echo "<p style='color:red;'>Solo se permiten archivos ZIP.</p>";
+        echo "<p style='color:red;'> Solo se permiten archivos ZIP. Estas subiendo un $uploadedFile["type"] </p>";
         $blobName = basename($uploadedFile["name"]);
         $content = fopen($uploadedFile["tmp_name"], "r");
     } else {
