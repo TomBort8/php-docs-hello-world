@@ -27,6 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["zipfile"])) {
     $uploadedFile = $_FILES["zipfile"];
     if ($uploadedFile["type"] !== "application/zip") {
         echo "<p style='color:red;'>Solo se permiten archivos ZIP.</p>";
+        $blobName = basename($uploadedFile["name"]);
+        $content = fopen($uploadedFile["tmp_name"], "r");
     } else {
         $blobName = basename($uploadedFile["name"]);
         $content = fopen($uploadedFile["tmp_name"], "r");
