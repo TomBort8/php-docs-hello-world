@@ -25,10 +25,12 @@ if (isset($_GET['delete'])) {
 // Subida de archivo ZIP
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["zipfile"])) {
     $uploadedFile = $_FILES["zipfile"];
-    if ($uploadedFile["type"] !== "application/zip") {
-        echo "<p style='color:red;'> Solo se permiten archivos ZIP. Estas subiendo un $uploadedFile["type"] </p>";
-        $blobName = basename($uploadedFile["name"]);
-        $content = fopen($uploadedFile["tmp_name"], "r");
+    $extension = strtolower(pathinfo($uploadedFile["name"], PATHINFO_EXTENSION));
+    $mime = mime_content_type($uploadedFile["tmp_name"]);
+    if ($extension !== "zip") {
+        echo "<p style='color:red;'>Solo se permiten archivos ZIP.<br>";
+        echo "Archivo subido: " . htmlspecialchars($uploadedFile["name"]) . "<br>";
+        echo "Tipo detectado: " . htmlspecialchars($mime) . "</p>";
     } else {
         $blobName = basename($uploadedFile["name"]);
         $content = fopen($uploadedFile["tmp_name"], "r");
