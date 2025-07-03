@@ -149,6 +149,14 @@ try {
         <input type="file" name="zipfile" accept=".zip" required><br>
         <button type="submit">Subir</button>
     </form>
+
+    <form action="storage.php" method="get">
+        <button type="submit">Ir a aules</button>
+        <button type="submit">Ir a apuntes Azure</button>
+        <button type="submit">Ir a gestión de archivos</button>        
+        <button type="submit">Ir a gestión de GitHub</button>
+    </form>
+    
 </body>
 </html>
 
