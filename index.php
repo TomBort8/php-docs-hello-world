@@ -76,12 +76,18 @@
 </head>
 <body>
 
-    <h1>Bienvenido a la aplicación de IAW</h1>
-
-    <form action="storage.php" method="get">
-        <button type="submit">Ir a gestión de archivos</button>
-    </form>
+    <h1>Bienvenido a la aplicación de IAW  
+      <img src="  https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwaJItVXesnuKrT4iUBFAJHc1WMs2TxYt61Q&s
+" alt="Logo" style="width:35px;"> 
+  </h1>
   
-
+    <h2>Este curso paralelo sirve para aprender a usar aplicaciones web e ir poco a poco desgranando sus diferentes funcionalidades</h2>
+  
+    <form action="storage.php" method="get">
+        <button type="submit">Ir a aules</button>
+        <button type="submit">Ir a apuntes Azure</button>
+        <button type="submit">Ir a gestión de archivos</button>        
+        <button type="submit">Ir a gestión de GitHub</button>
+    </form>
 </body>
 </html>
